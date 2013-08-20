@@ -1,0 +1,14 @@
+;-----------------------------------------------------------------------
+return	macro reg:REQ
+	mov	dword ptr [esp+28], reg
+endm
+
+hBIGS	macro	args:VARARG
+	.data?
+	for i, <args>
+        i hBIG ?
+    endm
+endm
+hBIGs equ <hBIGS>
+
+;-----------------------------------------------------------------------

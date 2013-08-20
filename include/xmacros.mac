@@ -1,0 +1,21 @@
+;-----------------------------------------------------------------------
+includes    macro   incl:vararg
+            for i, <incl>
+                if  @InStr(1, <i>, <.>)
+                    if  @InStr(1, <i>, <.lib>)
+                        includelib  i
+                    else
+                        include     i
+                    endif
+                else
+                    include     i.inc
+                    includelib  i.lib
+                endif
+            endm
+endm
+
+;-----------------------------------------------------------------------
+m2m	macro dest, src:REQ
+	push src
+	pop dest
+endm
